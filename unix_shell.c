@@ -114,8 +114,10 @@ int main(void)
 				else if(args[0][0]=='!'){
 					char a = args[0][1];
 					execvp(history[command_num-(a-'0')],args);
-
-					}
+				}
+				else {
+					execvp(args[0],args);
+				}
 		}
 		else { /* parent process */
 			if(ampersand == 1)
